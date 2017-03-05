@@ -1,0 +1,76 @@
+table {
+  width: 100%;
+  text-align: center;
+  border:none;
+  border-spacing: 10px;
+  /* have to override bootstrap */
+  border-collapse:separate;
+}
+
+td {
+  width: 50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.input-group {
+  width: 75%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#header {
+  padding: 10px 0 10px 0;
+  background-color: #ccffff;
+}
+
+#footer {
+  padding: 10px 0 10px 0;
+  background-color: #ccffff;
+}
+
+p {
+  text-align: center;
+}
+
+/* search results */
+
+/* search title */
+h2 {
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+
+.thumb {
+  width: 100px;
+  height: auto;
+}
+
+.price {
+  color: red;
+  margin-top: auto;
+}
+
+.shipping_price {
+  color: red;
+  font-size: 60%;
+}
+
+#searchResultsTable td {
+  /*border: 1px solid black;*/
+  background-color: #f2f2f2;
+  vertical-align: top;
+  border-radius: 25px;
+  padding: 10px 10px 10px 10px;
+}
+
+.navigation {
+  display: inline-block;
+  float: none;
+}
+
+#page_nav {
+  text-align: center;
+}
