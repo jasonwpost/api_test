@@ -10,8 +10,6 @@ $(document).ready(function(){
     success: function(data){
       renderHeader(data["data"]["lang"]["topbar"]);
       renderCompanyName(data["data"]["company_name"])
-      //displayHome(data);
-      console.log(data)
       renderFooter(data["data"]["lang"]["footer"]);
       if(window.location.search){
         searchGetRequest(window.location.search.substr(1)); //remove additional ? char
@@ -28,7 +26,6 @@ function renderCompanyName(companyName){
 function renderHeader(data){
   var header = "<table>";
   for (var key in data){
-    if (data.hasOwnProperty(key)){
 
       // SEARCH TRANSLATIONS
       if(key == "search_button"){
@@ -47,7 +44,6 @@ function renderHeader(data){
       // END OF SEARCH TRANSLATIONS
       header = header + "<td><a href='#'>" + data[key] + "</a></td>";
     }
-  }
   header = header + "</table>";
   var version = document.getElementById("header");
   version.innerHTML = header;
@@ -56,18 +52,11 @@ function renderHeader(data){
 function renderFooter(data){
   var footer = "<table>";
   for (var key in data){
-    if (data.hasOwnProperty(key)){
-      footer = footer + "<td><a href='#'>" + data[key] + "</a></td>";
-    }
+    footer = footer + "<td><a href='#'>" + data[key] + "</a></td>";
   }
   footer = footer + "</table>";
   var version = document.getElementById("footer");
   version.innerHTML = footer;
-}
-
-function presentHomePage(data){
-
-  var version = document.getElementById("content");
 }
 
 // **************
@@ -91,7 +80,6 @@ function searchGetRequest(searchTerms){
       url: "http://exercise.wandome.com/offer/list?" + searchTerms + "&token=" + getToken(),
       success: function(data){
         // list of offers + pagination data
-        console.log('sucess', data);
         if(data["data"]["paginate"]["total_no"] != 0){
           displayOffers(data["data"]["offers"]["list"], data["data"]["paginate"], data["data"]["lang"]["product"]);
         } else {
