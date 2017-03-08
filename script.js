@@ -37,8 +37,8 @@ function renderHeader(data){
         continue;
       }
       if (key == "search_input"){
-        var thing = document.getElementById('search_input');
-        thing.innerHTML = data[key];
+        var searchText = document.getElementById('search_input');
+        searchText.innerHTML = data[key];
         continue;
       }
       // END OF SEARCH TRANSLATIONS
@@ -154,7 +154,7 @@ function getPaginationMenu(pagination){
     pagMenu = pagMenu + "<li> <a href=javascript:goToPage(1) aria-label='Previous'> <span aria-hidden='true'><u>&laquo;</u></span> </a> </li><li> <a href=javascript:goToPage("+ (pagination["page"]-1) +") aria-label='Previous'> <span aria-hidden='true'>&laquo;</span> </a> </li>";
   }
 
-  // generate each button
+  // render HTML text for each button
   for (var i = 0; i < menu.length; i++){
     if (menu[i] == jQuery.query.get("page")){
       pagMenu = pagMenu + "<li class='active'>";
